@@ -51,8 +51,8 @@ POST /predict
 - Swagger UI documentation
 - Production deployment on Render
 
-→ [Access API Documentation](YOUR_SWAGGER_UI_LINK)
-→ [Test API Endpoint](YOUR_API_ENDPOINT)
+→ [Access API Documentation](http://127.0.0.1:8000/docs)
+→ [Test API Endpoint](http://127.0.0.1:8000/predict)
 
 ### 3. Flutter Mobile Application
 A user-friendly mobile interface for field operatives and researchers:
