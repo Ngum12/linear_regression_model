@@ -61,4 +61,4 @@ async def predict(input_data: PredictionInput):
 # Run the app
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="10.110.13.13", port=8000, reload=True)
+    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
