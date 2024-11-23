@@ -51,9 +51,8 @@ POST /predict
 - Swagger UI documentation
 - Production deployment on Render
 
-→ [Access API Documentation](http://127.0.0.1:8000/docs)
-
-→ [Test API Endpoint](http://127.0.0.1:8000/predict)
+→ [Access API Documentation](YOUR_SWAGGER_UI_LINK)
+→ [Test API Endpoint](YOUR_API_ENDPOINT)
 
 ### 3. Flutter Mobile Application
 A user-friendly mobile interface for field operatives and researchers:
@@ -129,8 +128,8 @@ Watch our 2-minute demonstration showcasing:
 → [Watch Demo](YOUR_YOUTUBE_LINK)
 
 ### Live Components
-- **API Endpoint**: `https://your-api.render.com/predict`
-- **Swagger UI**: `https://your-api.render.com/docs`
+- **API Endpoint**: `http://127.0.0.1:8000/predict`
+- **Swagger UI**: `(http://127.0.0.1:8000/docs)`
 - **Mobile App**: Available on [Google Play](YOUR_PLAY_STORE_LINK)
 
 ## 💡 Unique Value Proposition
