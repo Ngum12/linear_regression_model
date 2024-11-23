@@ -1,0 +1,24 @@
+name: africa_predicted
+description: A new Flutter project
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.4.0
+  go_router: ^12.0.0
+  http: ^1.1.0
+  fl_chart: ^0.65.0
+  shared_preferences: ^2.2.0
+  video_player: ^2.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+environment:
+  sdk: '^3.5.0'
+
+flutter:
+  assets:
+   - assets/videos/1116.mp4 
