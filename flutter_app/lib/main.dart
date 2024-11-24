@@ -318,7 +318,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://10.110.13.13:8000/predict'),
+        Uri.parse('http://192.168.43.40:8000/predict'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'Poverty_Rate': double.parse(controllers['poverty']!.text),
