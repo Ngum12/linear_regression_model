@@ -3,7 +3,7 @@
 ## 🎯 Project Mission
 To develop an innovative early warning system that predicts potential conflict zones in African regions using machine learning, providing actionable insights for peacekeeping organizations and humanitarian agencies.
 
-[![Project Demo](https://img.shields.io/badge/Demo-Watch%20Now-red)](YOUR_API_LINK)
+[![Project Demo](https://img.shields.io/badge/Demo-Watch%20Now-red)](https://youtu.be/YnMkLfbjKY8?si=jSMUaCK8zscbEhoa)
 [![API Status](https://img.shields.io/badge/API-Live-green)](https://african-conflict-api.onrender.com/docs)
 [![Dataset](https://img.shields.io/badge/Dataset-Kaggle-blue)](https://www.kaggle.com/datasets/dieudonnengum/political-conflick-africa)
 
@@ -40,7 +40,7 @@ Our predictive model leverages a comprehensive dataset of African socio-economic
 | Random Forest | 0.9626 | 0.6452 | Conflict Risk |
 | Random Forest | 0.9728 | 2.2516 | Peacebuilding |
 
-→ [View Full Model Documentation](https://colab.research.google.com/drive/1XXK2rjLdZqkvLP9xsYTJruJAnhqlnus1?usp=sharing)
+→ [View Full Model Documentation NOTEBOOK](https://colab.research.google.com/drive/1XXK2rjLdZqkvLP9xsYTJruJAnhqlnus1?usp=sharing)
 
 ### 2. FastAPI Implementation
 Our API provides real-time prediction capabilities with robust input validation:
@@ -95,14 +95,14 @@ jupyter notebook
 
 3. **Launch API Server**
 ```bash
-cd ../api
+cd ../Fast_api
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
 4. **Run Mobile Application**
 ```bash
-cd ../mobile_app
+cd ../flutter_app
 flutter pub get
 flutter run
 ```
@@ -128,7 +128,7 @@ Watch our 2-minute demonstration showcasing:
 2. API functionality via Swagger UI
 3. Real-world use case implementation
 
-→ [Watch Demo](YOUR_YOUTUBE_LINK)
+→ [Watch Demo](https://youtu.be/YnMkLfbjKY8?si=jSMUaCK8zscbEhoa)
 
 ### Live Components
 - **API Endpoint**: Available on [API Endpoint](https://african-conflict-api.onrender.com/predict)
@@ -159,14 +159,14 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 Interested in contributing? Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## ✍️ Author
-[Ngum Dieudonne]
-- Email: [d.ngum@alustudent.com]
+Ngum Dieudonne
+- Email: d.ngum@alustudent.com
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/ngum-dieudonne/)
 
 ## 🙏 Acknowledgments
-- [Mr Marvin Muyonga] for comprehensive and professional understanding of the subject and how He makes it easy to understand.
-- [perplexity.ai] for comprehensive African conflict data search made easy
-- [Render] for my free API and work deployment. 
+- Mr Marvin Muyonga: for comprehensive and professional understanding of the subject and how He makes it easy to understand.
+- perplexity.ai: for comprehensive African conflict data search made easy
+- Render: for my free API and work deployment. 
 - Our academic advisors for guidance
 
 ---
