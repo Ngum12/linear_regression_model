@@ -159,15 +159,15 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 Interested in contributing? Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## ✍️ Author
-Ngum Dieudonne
+**Ngum Dieudonne**
 - Email: d.ngum@alustudent.com
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/ngum-dieudonne/)
 
 ## 🙏 Acknowledgments
-- Mr Marvin Muyonga: for comprehensive and professional understanding of the subject and how He makes it easy to understand.
-- perplexity.ai: for comprehensive African conflict data search made easy
-- Render: for my free API and work deployment. 
-- Our academic advisors for guidance
+**- Mr Marvin Muyonga:** for comprehensive and professional understanding of the subject and how He makes it easy to understand.
+**- perplexity.ai:** for comprehensive African conflict data search made easy
+**- Render:** for my free API and work deployment. 
+**- Our academic advisors for guidance**
 
 ---
 *Note: This is the begining of something significate.*
