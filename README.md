@@ -128,8 +128,8 @@ Watch our 2-minute demonstration showcasing:
 → [Watch Demo](YOUR_YOUTUBE_LINK)
 
 ### Live Components
-- **API Endpoint**: Available on [API Endpoint](http://127.0.0.1:8000/predict)
-- **Swagger UI**: Available on [Swagger Ui](http://127.0.0.1:8000/docs)
+- **API Endpoint**: Available on [API Endpoint](https://african-conflict-api.onrender.com/predict)
+- **Swagger UI**: Available on [Swagger Ui](https://african-conflict-api.onrender.com/docs)
 - **Mobile App**: Available on [Google Play](YOUR_PLAY_STORE_LINK)
 
 ## 💡 Unique Value Proposition
