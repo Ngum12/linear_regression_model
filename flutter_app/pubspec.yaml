@@ -20,5 +20,6 @@ environment:
   sdk: '^3.5.0'
 
 flutter:
+  uses-material-design: true # Add this line for Material icons
   assets:
-   - assets/videos/1116.mp4 
+  - assets/videos/1116.mp4

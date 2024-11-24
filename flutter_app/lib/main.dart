@@ -282,8 +282,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+// Prediction input screen
 
-// Prediction Screen with Form and Results
 class PredictionScreen extends StatefulWidget {
   const PredictionScreen({Key? key}) : super(key: key);
 
@@ -308,6 +308,12 @@ class _PredictionScreenState extends State<PredictionScreen> {
   String? error;
   Map<String, dynamic>? predictions;
 
+  // Custom colors
+  final Color primaryColor = const Color(0xFF2E4057);
+  final Color accentColor = const Color(0xFF48A9A6);
+  final Color cardColor = const Color(0xFFF4F6F8);
+  final Color textColor = const Color(0xFF1A1F2C);
+
   Future<void> fetchPrediction() async {
     if (!_formKey.currentState!.validate()) return;
 
@@ -318,7 +324,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://african-conflict-api.onrender.com/predict'), // Updated live URL
+        Uri.parse('https://african-conflict-api.onrender.com/predict'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'Poverty_Rate': double.parse(controllers['poverty']!.text),
@@ -361,149 +367,233 @@ class _PredictionScreenState extends State<PredictionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Input Data'),
-        elevation: 0,
-      ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(16.0),
-          children: [
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Economic Indicators',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [primaryColor, primaryColor.withOpacity(0.8)],
+          ),
+        ),
+        child: SafeArea(
+          child: CustomScrollView(
+            slivers: [
+              // Custom App Bar
+              SliverAppBar(
+                expandedHeight: 120,
+                floating: true,
+                pinned: true,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: Text(
+                    'Conflict Risk Assessment',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  background: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [primaryColor, primaryColor.withOpacity(0.8)],
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    _buildInputField(
-                      controllers['poverty']!,
-                      'Poverty Rate (%)',
-                      'Enter a value between 0 and 100',
-                      (value) => _validatePercentage(value, 'Poverty rate'),
-                    ),
-                    _buildInputField(
-                      controllers['unemployment']!,
-                      'Unemployment Rate (%)',
-                      'Enter a value between 0 and 100',
-                      (value) => _validatePercentage(value, 'Unemployment rate'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Social Indicators',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _buildInputField(
-                      controllers['education']!,
-                      'Education Index',
-                      'Enter a value between 0 and 1',
-                      (value) => _validateRange(value, 'Education index', 0, 1),
-                    ),
-                    _buildInputField(
-                      controllers['ethnic']!,
-                      'Ethnic Diversity Index',
-                      'Enter a value between 0 and 1',
-                      (value) => _validateRange(value, 'Ethnic diversity index', 0, 1),
-                    ),
-                    _buildInputField(
-                      controllers['religious']!,
-                      'Religious Diversity Index',
-                      'Enter a value between 0 and 1',
-                      (value) => _validateRange(value, 'Religious diversity index', 0, 1),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Governance Indicators',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    _buildInputField(
-                      controllers['stability']!,
-                      'Political Stability Index',
-                      'Enter a value (typically -2.5 to 2.5)',
-                      (value) => _validateNumber(value, 'Political stability index'),
-                    ),
-                    _buildInputField(
-                      controllers['corruption']!,
-                      'Corruption Perception Index',
-                      'Enter a value between 0 and 100',
-                      (value) => _validatePercentage(value, 'Corruption perception index'),
-                    ),
-                    _buildInputField(
-                      controllers['density']!,
-                      'Population Density',
-                      'Enter population per square kilometer',
-                      (value) => _validatePositiveNumber(value, 'Population density'),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            if (error != null)
-              Card(
-                color: Colors.red[100],
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    error!,
-                    style: const TextStyle(color: Colors.red),
                   ),
                 ),
               ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: isLoading ? null : fetchPrediction,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+
+              // Form Content
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        _buildSection(
+                          'Economic Indicators',
+                          Icons.bar_chart, // Changed icon
+                          [
+                            _buildInputField(
+                              controllers['poverty']!,
+                              'Poverty Rate',
+                              'Enter value (0-100%)',
+                              (value) => _validatePercentage(value, 'Poverty rate'),
+                              icon: Icons.money_off, // Changed icon
+                            ),
+                            _buildInputField(
+                              controllers['unemployment']!,
+                              'Unemployment Rate',
+                              'Enter value (0-100%)',
+                              (value) => _validatePercentage(value, 'Unemployment rate'),
+                              icon: Icons.work_off, // Changed icon
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        _buildSection(
+                          'Social Indicators',
+                          Icons.groups, // Changed icon
+                          [
+                            _buildInputField(
+                              controllers['education']!,
+                              'Education Index',
+                              'Enter value (0-1)',
+                              (value) => _validateRange(value, 'Education index', 0, 1),
+                              icon: Icons.school, // This icon exists
+                            ),
+                            _buildInputField(
+                              controllers['ethnic']!,
+                              'Ethnic Diversity Index',
+                              'Enter value (0-1)',
+                              (value) => _validateRange(value, 'Ethnic diversity index', 0, 1),
+                              icon: Icons.people_alt, // Changed icon
+                            ),
+                            _buildInputField(
+                              controllers['religious']!,
+                              'Religious Diversity Index',
+                              'Enter value (0-1)',
+                              (value) => _validateRange(value, 'Religious diversity index', 0, 1),
+                              icon: Icons.maps_home_work, // Changed icon
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        _buildSection(
+                          'Governance Indicators',
+                          Icons.account_balance, // This icon exists
+                          [
+                            _buildInputField(
+                              controllers['stability']!,
+                              'Political Stability Index',
+                              'Enter value (-2.5 to 2.5)',
+                              (value) => _validateNumber(value, 'Political stability index'),
+                              icon: Icons.security, // Changed icon
+                            ),
+                            _buildInputField(
+                              controllers['corruption']!,
+                              'Corruption Perception Index',
+                              'Enter value (0-100)',
+                              (value) => _validatePercentage(value, 'Corruption perception index'),
+                              icon: Icons.warning, // Changed icon
+                            ),
+                            _buildInputField(
+                              controllers['density']!,
+                              'Population Density',
+                              'Enter value (people/km²)',
+                              (value) => _validatePositiveNumber(value, 'Population density'),
+                              icon: Icons.group, // This icon exists
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 24),
+                        if (error != null)
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.red.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.red.withOpacity(0.3)),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.error_outline, color: Colors.red),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                    error!,
+                                    style: const TextStyle(color: Colors.red),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        const SizedBox(height: 24),
+                        SizedBox(
+                          width: double.infinity,
+                          height: 56,
+                          child: ElevatedButton(
+                            onPressed: isLoading ? null : fetchPrediction,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: accentColor, // Updated from primary
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 2,
+                            ),
+                            child: isLoading
+                                ? const CircularProgressIndicator(color: Colors.white)
+                                : const Text(
+                                    'Generate Prediction',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-              child: isLoading
-                  ? const CircularProgressIndicator()
-                  : const Text(
-                      'Generate Predictions',
-                      style: TextStyle(fontSize: 18),
-                    ),
-            ),
-          ],
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSection(String title, IconData headerIcon, List<Widget> children) {
+    return Container(
+      decoration: BoxDecoration(
+        color: cardColor,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: accentColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Icon(headerIcon, color: accentColor),
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(children: children),
+          ),
+          const SizedBox(height: 16),
+        ],
       ),
     );
   }
@@ -512,20 +602,34 @@ class _PredictionScreenState extends State<PredictionScreen> {
     TextEditingController controller,
     String label,
     String hint,
-    String? Function(String?) validator,
-  ) {
+    String? Function(String?) validator, {
+    IconData? icon,
+  }) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
+      padding: const EdgeInsets.only(bottom: 16),
       child: TextFormField(
         controller: controller,
         decoration: InputDecoration(
           labelText: label,
           hintText: hint,
-          border: const OutlineInputBorder(),
+          prefixIcon: Icon(icon, color: accentColor),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.grey.shade300),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.grey.shade300),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: accentColor, width: 2),
+          ),
           filled: true,
-          fillColor: const Color.fromARGB(255, 181, 170, 170),
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         ),
-        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         inputFormatters: [
           FilteringTextInputFormatter.allow(RegExp(r'[-0-9.]')),
         ],
@@ -534,59 +638,37 @@ class _PredictionScreenState extends State<PredictionScreen> {
     );
   }
 
+  // Validation helpers remain the same
   String? _validatePercentage(String? value, String field) {
-    if (value == null || value.isEmpty) {
-      return '$field is required';
-    }
+    if (value == null || value.isEmpty) return '$field is required';
     final number = double.tryParse(value);
-    if (number == null) {
-      return 'Please enter a valid number';
-    }
-    if (number < 0 || number > 100) {
-      return '$field must be between 0 and 100';
-    }
+    if (number == null) return 'Please enter a valid number';
+    if (number < 0 || number > 100) return '$field must be between 0 and 100';
     return null;
   }
 
   String? _validateRange(String? value, String field, double min, double max) {
-    if (value == null || value.isEmpty) {
-      return '$field is required';
-    }
+    if (value == null || value.isEmpty) return '$field is required';
     final number = double.tryParse(value);
-    if (number == null) {
-      return 'Please enter a valid number';
-    }
-    if (number < min || number > max) {
-      return '$field must be between $min and $max';
-    }
+    if (number == null) return 'Please enter a valid number';
+    if (number < min || number > max) return '$field must be between $min and $max';
     return null;
   }
 
   String? _validateNumber(String? value, String field) {
-    if (value == null || value.isEmpty) {
-      return '$field is required';
-    }
-    if (double.tryParse(value) == null) {
-      return 'Please enter a valid number';
-    }
+    if (value == null || value.isEmpty) return '$field is required';
+    if (double.tryParse(value) == null) return 'Please enter a valid number';
     return null;
   }
 
   String? _validatePositiveNumber(String? value, String field) {
-    if (value == null || value.isEmpty) {
-      return '$field is required';
-    }
+    if (value == null || value.isEmpty) return '$field is required';
     final number = double.tryParse(value);
-    if (number == null) {
-      return 'Please enter a valid number';
-    }
-    if (number < 0) {
-      return '$field must be positive';
-    }
+    if (number == null) return 'Please enter a valid number';
+    if (number < 0) return '$field must be positive';
     return null;
   }
 }
-
 
 // Results Screen with Visualizations
 class ResultsScreen extends StatelessWidget {
