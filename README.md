@@ -7,6 +7,8 @@ To develop an innovative early warning system that predicts potential conflict z
 [![API Status](https://img.shields.io/badge/API-Live-green)](https://african-conflict-api.onrender.com/docs)
 [![Dataset](https://img.shields.io/badge/Dataset-Kaggle-blue)](https://www.kaggle.com/datasets/dieudonnengum/political-conflick-africa)
 
+→ [Alternatively, Access Dataset from my Googledrive if you donot have a Kaggle account Documentation](https://drive.google.com/file/d/1r1Zfkt5iNuMqCTxypEtusOFdDncXsyAT/view?usp=drive_link)
+
 ## 📊 Project Overview
 This project combines machine learning, API development, and mobile technology to create a practical tool for conflict prediction and prevention. Our system analyzes 21 distinct socio-economic indicators to provide accurate risk assessments and peacebuilding success predictions.
 
