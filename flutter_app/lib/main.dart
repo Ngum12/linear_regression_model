@@ -318,7 +318,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.43.40:8000/predict'),
+        Uri.parse('https://african-conflict-api.onrender.com/predict'), // Updated live URL
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'Poverty_Rate': double.parse(controllers['poverty']!.text),
@@ -501,7 +501,6 @@ class _PredictionScreenState extends State<PredictionScreen> {
                       'Generate Predictions',
                       style: TextStyle(fontSize: 18),
                     ),
-                  
             ),
           ],
         ),
@@ -587,6 +586,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
     return null;
   }
 }
+
 
 // Results Screen with Visualizations
 class ResultsScreen extends StatelessWidget {
