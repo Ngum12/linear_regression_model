@@ -5,6 +5,8 @@ A new Flutter project.
 ## Getting Started
 
 ## Run Mobile Application
-cd ../mobile_app
+cd ../flutter_app
+
 flutter pub get
+
 flutter run
