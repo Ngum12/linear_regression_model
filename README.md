@@ -143,29 +143,30 @@ Our system differentiates itself through:
 
 ## 📊 Results & Impact
 - Successfully identified high-risk regions with 96.26% accuracy
-- Deployed in [Number] African countries
-- Supporting [Organization Names] in peacekeeping efforts
+- Deployed in [1] African countries
+- Supporting [HFC, Nypthoria] in peacekeeping efforts
 
 ## 🔍 Future Enhancements
 1. Integration of satellite imagery data
 2. Real-time news feed analysis
 3. Extended mobile app capabilities
 
-## 📝 License
+## 📝 License still to be added when the time comes
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## 🤝 Contributing
+## 🤝 Contributing, Not open for now...
 Interested in contributing? Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## ✍️ Author
-[Your Name]
-- Email: [your.email@domain.com]
-- LinkedIn: [Your LinkedIn Profile](YOUR_LINKEDIN_LINK)
+[Ngum Dieudonne]
+- Email: [d.ngum@alustudent.com]
+- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/ngum-dieudonne/)
 
 ## 🙏 Acknowledgments
-- [Dataset Provider Name] for comprehensive African conflict data
-- [Organization Names] for domain expertise
+- [Mr Marvin Muyonga] for comprehensive and professional understanding of the subject and how He makes it easy to understand.
+- [perplexity.ai] for comprehensive African conflict data search made easy
+- [Render] for my free API and work deployment. 
 - Our academic advisors for guidance
 
 ---
-*Note: Replace all placeholder links (YOUR_LINK) with actual project links before publishing.*
+*Note: This is the begining of something significate.*
