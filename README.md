@@ -38,7 +38,7 @@ Our predictive model leverages a comprehensive dataset of African socio-economic
 | Random Forest | 0.9626 | 0.6452 | Conflict Risk |
 | Random Forest | 0.9728 | 2.2516 | Peacebuilding |
 
-→ [View Full Model Documentation](YOUR_NOTEBOOK_LINK)
+→ [View Full Model Documentation](https://colab.research.google.com/drive/1XXK2rjLdZqkvLP9xsYTJruJAnhqlnus1?usp=sharing)
 
 ### 2. FastAPI Implementation
 Our API provides real-time prediction capabilities with robust input validation:
