@@ -53,11 +53,8 @@ POST /predict
 - Swagger UI documentation
 - Production deployment on Render
 
-→ [Access API Documentation](YOUR_SWAGGER_UI_LINK)
+→ [Access API Documentation](https://african-conflict-api.onrender.com/docs)
 → [Test API Endpoint](https://african-conflict-api.onrender.com/)
-
-<img width="299" alt="Screenshot 2024-11-24 132243" src="https://github.com/user-attachments/assets/f54ffc5c-84e8-4a79-8980-331a0b538c39">
-
 ### 3. Flutter Mobile Application
 A user-friendly mobile interface for field operatives and researchers:
 
