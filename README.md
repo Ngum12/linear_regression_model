@@ -65,7 +65,7 @@ A user-friendly mobile interface for field operatives and researchers:
 - Multi-language support
 
 → [Download APK](YOUR_APK_LINK)
-→ [View App Screenshots](YOUR_SCREENSHOTS_FOLDER)
+→ [View App Screenshots](https://drive.google.com/drive/folders/14f8HFh0y98dwRD2D0mmVVvE5Q4B9Riba?usp=drive_link)
 
 ## 🚀 Getting Started
 
