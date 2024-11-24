@@ -4,7 +4,7 @@
 To develop an innovative early warning system that predicts potential conflict zones in African regions using machine learning, providing actionable insights for peacekeeping organizations and humanitarian agencies.
 
 [![Project Demo](https://img.shields.io/badge/Demo-Watch%20Now-red)](YOUR_API_LINK)
-[![API Status](https://img.shields.io/badge/API-Live-green)](YOUR_API_LINK)
+[![API Status](https://img.shields.io/badge/API-Live-green)](https://african-conflict-api.onrender.com/docs)
 [![Dataset](https://img.shields.io/badge/Dataset-Kaggle-blue)](https://www.kaggle.com/datasets/dieudonnengum/political-conflick-africa)
 
 ## 📊 Project Overview
