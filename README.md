@@ -165,8 +165,11 @@ Interested in contributing? Please read our [CONTRIBUTING.md](CONTRIBUTING.md) f
 
 ## 🙏 Acknowledgments
 **- Mr Marvin Muyonga:** for comprehensive and professional understanding of the subject and how He makes it easy to understand.
+
 **- perplexity.ai:** for comprehensive African conflict data search made easy
+
 **- Render:** for my free API and work deployment. 
+
 **- Our academic advisors for guidance**
 
 ---
