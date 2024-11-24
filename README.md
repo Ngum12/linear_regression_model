@@ -54,7 +54,7 @@ POST /predict
 - Production deployment on Render
 
 → [Access API Documentation](YOUR_SWAGGER_UI_LINK)
-→ [Test API Endpoint](YOUR_API_ENDPOINT)
+→ [Test API Endpoint](<img width="1280" alt="Endpoint " src="https://github.com/user-attachments/assets/c9e3718f-f507-456f-93d6-78b9018aaac5">)
 
 ### 3. Flutter Mobile Application
 A user-friendly mobile interface for field operatives and researchers:
