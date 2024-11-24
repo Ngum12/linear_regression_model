@@ -11,6 +11,7 @@ To develop an innovative early warning system that predicts potential conflict z
 
 ## 📊 Project Overview
 This project combines machine learning, API development, and mobile technology to create a practical tool for conflict prediction and prevention. Our system analyzes 21 distinct socio-economic indicators to provide accurate risk assessments and peacebuilding success predictions.
+
 https://github.com/user-attachments/assets/e9a65405-fdd6-4d84-849f-5221a5f45704
 
 ### Key Achievements
